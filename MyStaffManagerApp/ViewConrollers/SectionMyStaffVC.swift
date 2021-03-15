@@ -52,8 +52,8 @@ class SectionMyStaffVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIndentyfire, for: indexPath)
-        let city = staffs[indexPath.row]
-        cell.textLabel?.text = city
+        let stuff = staffs[indexPath.row]
+        cell.textLabel?.text = stuff
     
         return cell
     }
