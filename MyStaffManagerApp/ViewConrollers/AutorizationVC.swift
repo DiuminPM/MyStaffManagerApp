@@ -8,12 +8,15 @@
 import UIKit
 import SnapKit
 
-class AutorizationVC: UIViewController {
+class AutorizationVC: UIViewController, UITextFieldDelegate {
+    
+    let nameTF = UITextField()
+    let passwordTF = UITextField()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
-        
+        nameTF.delegate = self
     }
 
     private func initialize() {
@@ -27,7 +30,7 @@ class AutorizationVC: UIViewController {
 //            maker.top.equalToSuperview().inset(400)
 //
 //        }
-        let nameTF = UITextField()
+        
         nameTF.placeholder = "Enter your name"
         nameTF.backgroundColor = .white
         nameTF.layer.cornerRadius = 10
@@ -50,7 +53,6 @@ class AutorizationVC: UIViewController {
 //            maker.top.equalTo(nameTF).inset(40)
 //
 //        }
-        let passwordTF = UITextField()
         passwordTF.placeholder = "Enter your password"
         passwordTF.backgroundColor = .white
         passwordTF.layer.cornerRadius = 10
@@ -80,10 +82,16 @@ class AutorizationVC: UIViewController {
     }
     
     @objc private func buttonPressed() {
+        
         let selectionCityVC = SelectionViewController()
         selectionCityVC.modalPresentationStyle = .fullScreen
         present(selectionCityVC, animated: false)
+        
 //        navigationController?.pushViewController(selectionCityVC, animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
     }
     
 
@@ -95,3 +103,4 @@ extension UITextField {
         self.leftViewMode = .always
     }
 }
+

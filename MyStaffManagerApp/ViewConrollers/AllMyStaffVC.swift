@@ -20,7 +20,9 @@ class AllMyStaffVC: UITableViewController {
         }
     
     func createdTableView() {
+        self.tableView.backgroundColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIndentyfire)
+        self.tableView.register(StaffTableViewCell.self, forCellReuseIdentifier: StaffTableViewCell.indentifire)
        
     }
 
@@ -49,31 +51,35 @@ class AllMyStaffVC: UITableViewController {
     }
     
     @objc func addNewStaff() {
-        let addVC = AddNewStaffVC()
-        navigationController?.pushViewController(addVC, animated: true)
+        let addVC = UINavigationController(rootViewController: AddNewStaffVC())
+        addVC.modalPresentationStyle = .fullScreen
+        navigationController?.present(addVC, animated: true)
+//        navigationController?.pushViewController(addVC, animated: true)
     }
     // MARK: - Table view Data Source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return staffs.count
+        return 5
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIndentyfire, for: indexPath)
-        let staff = staffs[indexPath.row]
-        cell.textLabel?.text = staff
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: StaffTableViewCell.indentifire, for: indexPath) as? StaffTableViewCell else {
+            return UITableViewCell()
+        }
+        
     
         return cell
     }
     
     // MARK: - Table view Delegate
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 90
     }
     
     
 
    
 }
+
 
 
