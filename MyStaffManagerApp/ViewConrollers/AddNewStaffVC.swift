@@ -9,22 +9,24 @@ import UIKit
 import SnapKit
 
 class AddNewStaffVC: UIViewController {
+    let notification = NotificationCenter.default
+    var imageIsChanged = false
+    var nameTextField = UITextField()
+    var priceTextField = UITextField()
+    var serialNumberTextField = UITextField()
+    var locationTextField = UITextField()
+    var imageStuff = UIImageView()
+    var newStuff: Stuff?
     
-    let nameTextField = UITextField()
-    let priceTextField = UITextField()
-    let serialNumberTextField = UITextField()
-    let locationTextField = UITextField()
-    var newImageButton = UIButton(type: .system)
-    let scrollView = UIScrollView()
-    
-    
-    
-
+   
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         initialize()
+        
+        
 //        keybordWillUP(upSise: -220)
 
         self.navigationItem.rightBarButtonItem?.isEnabled = false
@@ -36,12 +38,16 @@ class AddNewStaffVC: UIViewController {
     
     private func initialize() {
         view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        newImageButton.setImage(#imageLiteral(resourceName: "Photo"), for: .normal)
-        newImageButton.addTarget(self, action: #selector(addPhoto), for: .touchUpInside)
-        view.addSubview(newImageButton)
-        newImageButton.snp.makeConstraints { maker in
-            maker.top.equalToSuperview().inset(116)
+        imageStuff.image = #imageLiteral(resourceName: "Photo")
+        imageStuff.contentMode = .scaleAspectFit
+        let tap = UITapGestureRecognizer(target: self, action: #selector(addPhoto))
+        imageStuff.addGestureRecognizer(tap)
+        imageStuff.isUserInteractionEnabled = true
+        view.addSubview(imageStuff)
+        imageStuff.snp.makeConstraints { maker in
+            maker.top.equalToSuperview().inset(100)
             maker.centerX.equalToSuperview().offset(10)
+            maker.height.equalTo(150)
         }
         let nameLabel = UILabel()
         nameLabel.text = "Name:"
@@ -49,7 +55,7 @@ class AddNewStaffVC: UIViewController {
         view.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { maker in
             maker.left.equalToSuperview().inset(20)
-            maker.top.equalTo(newImageButton.snp.bottom).offset(16)
+            maker.top.equalTo(imageStuff.snp.bottom).offset(16)
         }
         nameTextField.placeholder = "enter name"
         nameTextField.backgroundColor = .white
@@ -128,6 +134,30 @@ class AddNewStaffVC: UIViewController {
             maker.height.equalTo(30)
         }
     }
+//MARK: Save new stuff
+    @objc func saveNewStuff() {
+        
+        var image: UIImage?
+        
+        if imageIsChanged {
+            image = imageStuff.image
+        } else {
+            image = #imageLiteral(resourceName: "photo")
+        }
+            newStuff = Stuff(name: nameTextField.text!,
+                         price: priceTextField.text,
+                         serialNumber: serialNumberTextField.text,
+                         location: locationTextField.text,
+                         image: image)
+        print(newStuff!)
+    }
+//    var imageIsChanged = false
+//    let nameTextField = UITextField()
+//    let priceTextField = UITextField()
+//    let serialNumberTextField = UITextField()
+//    let locationTextField = UITextField()
+//    var imageStuff = UIImageView()
+//    var newStuff: Stuff?
     
 //MARK: Work with NavigationBar
     private func setupNavigationBar() {
@@ -140,12 +170,16 @@ class AddNewStaffVC: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .save,
             target: self,
-            action: #selector(addNewStaff)
+            action: #selector(saveNewStaffs)
         )
         
-        
     }
-    private func saveNewStaff() {
+    
+    @objc func saveNewStaffs() {
+        saveIsChanged = true
+        dismiss(animated: true) {
+            self.notification.post(name: Notification.Name("AddStuff"), object: nil)
+        }
         
     }
     
@@ -197,11 +231,14 @@ class AddNewStaffVC: UIViewController {
 //MARK: Extension UITextField
 extension AddNewStaffVC: UITextFieldDelegate {
     
-    // Скрываем клавиатуру по нажатию на Done
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == priceTextField {
-        self.view.frame.origin.y = -100
+        if textField == serialNumberTextField {
+            self.view.frame.origin.y = -70
         }
+        if textField == priceTextField {
+            self.view.frame.origin.y = -150
+        }
+        // Скрываем клавиатуру по нажатию на Done и сдвигаем обратно
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -240,8 +277,20 @@ extension AddNewStaffVC: UIImagePickerControllerDelegate, UINavigationController
             let imagePicker = UIImagePickerController()
             imagePicker.allowsEditing = true
             imagePicker.sourceType = source
+            imagePicker.delegate = self
             present(imagePicker, animated: true)
         }
+    }
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        imageStuff.image = info[.editedImage] as? UIImage
+        imageStuff.contentMode = .scaleAspectFit
+        imageStuff.clipsToBounds = true
+        
+        imageIsChanged = true
+        
+        dismiss(animated: true)
     }
 }
 

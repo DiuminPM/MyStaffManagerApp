@@ -26,13 +26,11 @@ class StaffTableViewCell: UITableViewCell {
     private func initialize() {
         
         contentView.addSubview(logoStuff)
-        logoStuff.image = #imageLiteral(resourceName: "Image")
         logoStuff.snp.makeConstraints { maker in
             maker.top.left.bottom.equalToSuperview().inset(5)
             maker.width.equalTo(100)
             
         }
-        titleName.text = "Staff"
         contentView.addSubview(titleName)
         titleName.snp.makeConstraints { maker in
             maker.left.equalToSuperview().inset(116)
