@@ -9,21 +9,14 @@ import UIKit
 
 class AllMyStaffVC: UITableViewController {
 
-    var stuffs = [Stuff]()
     var cellIndentyfire = "Cell"
-    let ncObserver = NotificationCenter.default
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         createdTableView()
-        ncObserver.addObserver(self, selector: #selector(self.addStuff), name: Notification.Name("AddStuff"), object: nil)
-            
         
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
 //        stuffs.append(Stuff(name: "Piohfr", price: "Piohfr", serialNumber: "Piohfr", location: "Piohfr", image: #imageLiteral(resourceName: "photo")))
 //        stuffs.append(Stuff(name: "Piohfcdr", price: "Piohfr", serialNumber: "Piohfr", location: "Piohfr", image: #imageLiteral(resourceName: "photo")))
         
@@ -36,6 +29,7 @@ class AllMyStaffVC: UITableViewController {
     func createdTableView() {
         self.tableView.backgroundColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIndentyfire)
+        self.tableView.register(StaffTableViewCell.self, forCellReuseIdentifier: StaffTableViewCell.indentifire)
        
     }
     
@@ -63,11 +57,10 @@ class AllMyStaffVC: UITableViewController {
     }
     
     @objc func canceled() {
-        self.tableView.reloadData()
-//        let mainVC = AutorizationVC()
-//        mainVC.modalPresentationStyle = .fullScreen
-//        mainVC.modalTransitionStyle = .flipHorizontal
-//        present(mainVC, animated: true)
+        let mainVC = AutorizationVC()
+        mainVC.modalPresentationStyle = .fullScreen
+        mainVC.modalTransitionStyle = .flipHorizontal
+        present(mainVC, animated: true)
     }
     @objc func addStuff() {
         let newStuff = AddNewStaffVC()
@@ -90,9 +83,10 @@ class AllMyStaffVC: UITableViewController {
         return stuffs.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIndentyfire, for: indexPath)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: StaffTableViewCell.indentifire, for: indexPath) as! StaffTableViewCell
         let stuff = stuffs[indexPath.row]
-        cell.textLabel?.text = stuff.name
+        cell.logoStuff.image = stuff.image
+        cell.titleName.text = stuff.name
     
         return cell
     }

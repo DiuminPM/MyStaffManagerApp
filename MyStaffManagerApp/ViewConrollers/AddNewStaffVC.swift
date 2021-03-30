@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 class AddNewStaffVC: UIViewController {
-    let notification = NotificationCenter.default
     var imageIsChanged = false
     var nameTextField = UITextField()
     var priceTextField = UITextField()
@@ -149,6 +148,9 @@ class AddNewStaffVC: UIViewController {
                          serialNumber: serialNumberTextField.text,
                          location: locationTextField.text,
                          image: image)
+        stuffs.append(newStuff!)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+        dismiss(animated: true)
         print(newStuff!)
     }
 //    var imageIsChanged = false
@@ -170,17 +172,8 @@ class AddNewStaffVC: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .save,
             target: self,
-            action: #selector(saveNewStaffs)
+            action: #selector(saveNewStuff)
         )
-        
-    }
-    
-    @objc func saveNewStaffs() {
-        saveIsChanged = true
-        dismiss(animated: true) {
-            self.notification.post(name: Notification.Name("AddStuff"), object: nil)
-        }
-        
     }
     
     @objc func canceled() {

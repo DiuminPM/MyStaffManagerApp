@@ -15,6 +15,8 @@ struct Stuff {
     var image: UIImage?
 }
 
+var stuffs = [Stuff]()
+
 //var staffs = ["Name stuff", "Price", "Serial number", "Location"]
 
 
