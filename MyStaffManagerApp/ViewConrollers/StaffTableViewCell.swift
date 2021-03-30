@@ -32,17 +32,11 @@ class StaffTableViewCell: UITableViewCell {
         logoStuff.snp.makeConstraints { maker in
             maker.top.left.bottom.equalToSuperview().inset(5)
             maker.width.equalTo(100)
-            
-            
         }
         contentView.addSubview(titleName)
         titleName.snp.makeConstraints { maker in
             maker.left.equalToSuperview().inset(116)
             maker.right.equalToSuperview().inset(16)
         }
-        
     }
-    
-   
-
 }

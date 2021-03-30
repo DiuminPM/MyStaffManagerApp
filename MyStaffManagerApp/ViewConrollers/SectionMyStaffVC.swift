@@ -17,15 +17,13 @@ class SectionMyStaffVC: UITableViewController {
         super.viewDidLoad()
         setupNavigationBar()
         createdTableView()
-            
         }
     
     func createdTableView() {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIndentyfire)
-       
+        self.tableView.register(CategoryStaffCustomCell.self, forCellReuseIdentifier: CategoryStaffCustomCell.indentifire)
     }
 
-    
     private func setupNavigationBar() {
         self.navigationItem.title = "Category Stuff"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(
@@ -47,17 +45,22 @@ class SectionMyStaffVC: UITableViewController {
     // MARK: - Table view Data Source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return staffs.count
+        return 9
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIndentyfire, for: indexPath)
-        let stuff = staffs[indexPath.row]
-        cell.textLabel?.text = stuff
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: CategoryStaffCustomCell.indentifire, for: indexPath) as! CategoryStaffCustomCell
+        cell.titleNameCategory.text = "Используется"
+        
+        
     
         return cell
     }
     
+    // MARK: - Table view Delegate
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
     
 
    
