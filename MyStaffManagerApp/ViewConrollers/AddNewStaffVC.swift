@@ -17,22 +17,12 @@ class AddNewStaffVC: UIViewController {
     var imageStuff = UIImageView()
     var newStuff: Stuff?
     
-   
-   
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         initialize()
-        
-        
-//        keybordWillUP(upSise: -220)
-
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         nameTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
-        
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(textFieldTextDidChange), name: UITextField.textDidChangeNotification, object: nil)
         }
     
     private func initialize() {
@@ -153,13 +143,6 @@ class AddNewStaffVC: UIViewController {
         dismiss(animated: true)
         print(newStuff!)
     }
-//    var imageIsChanged = false
-//    let nameTextField = UITextField()
-//    let priceTextField = UITextField()
-//    let serialNumberTextField = UITextField()
-//    let locationTextField = UITextField()
-//    var imageStuff = UIImageView()
-//    var newStuff: Stuff?
     
 //MARK: Work with NavigationBar
     private func setupNavigationBar() {
@@ -178,7 +161,6 @@ class AddNewStaffVC: UIViewController {
     
     @objc func canceled() {
         dismiss(animated: true)
-     
     }
     
     @objc func addNewStaff() {
@@ -192,38 +174,30 @@ class AddNewStaffVC: UIViewController {
     @objc func addPhoto() {
         let cameraIcon = #imageLiteral(resourceName: "camera")
         let photoIcon = #imageLiteral(resourceName: "photo")
-        
         let actionSheet = UIAlertController(title: nil,
                                             message: nil,
                                             preferredStyle: .actionSheet)
-        
         let camera = UIAlertAction(title: "Camera", style: .default) { _ in
             self.chooseImagePicker(source: .camera)
         }
-        
         camera.setValue(cameraIcon, forKey: "image")
         camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
-        
         let photo = UIAlertAction(title: "Photo", style: .default) { _ in
             self.chooseImagePicker(source: .photoLibrary)
         }
-        
         photo.setValue(photoIcon, forKey: "image")
         photo.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
-        
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        
         actionSheet.addAction(camera)
         actionSheet.addAction(photo)
         actionSheet.addAction(cancel)
-        
         present(actionSheet, animated: true)
         } 
 }
 
 //MARK: Extension UITextField
 extension AddNewStaffVC: UITextFieldDelegate {
-    
+        // двигаем экран чтобы поля не закрывала клавиатура
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == serialNumberTextField {
             self.view.frame.origin.y = -70
@@ -233,39 +207,26 @@ extension AddNewStaffVC: UITextFieldDelegate {
         }
         // Скрываем клавиатуру по нажатию на Done и сдвигаем обратно
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         self.view.frame.origin.y = 0
         return true
     }
-//    @objc func textFieldTextDidChange() {
-//        self.navigationItem.rightBarButtonItem?.isEnabled = true
-//    }
+        // активность кнопки "add(+)" в зависимости от наличии текста
     @objc private func textFieldChanged() {
-
         if nameTextField.text!.isEmpty == false {
             self.navigationItem.rightBarButtonItem!.isEnabled = true
-            
         } else {
             self.navigationItem.rightBarButtonItem!.isEnabled = false
         }
     }
-//    func keybordWillUP(upSise: CGFloat) {
-//        NotificationCenter.default.addObserver(forName: UITextField.keyboardWillShowNotification, object: nil, queue: nil) { (nc) in
-//            self.view.frame.origin.y = upSise
-//        }
-//        NotificationCenter.default.addObserver(forName: UITextField.keyboardWillHideNotification, object: nil, queue: nil) { (nc) in
-//            self.view.frame.origin.y = 0
-//        }
-//    }
-    
 }
 
 //MARK: Work with image
 extension AddNewStaffVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
-        
         if UIImagePickerController.isSourceTypeAvailable(source) {
             let imagePicker = UIImagePickerController()
             imagePicker.allowsEditing = true
@@ -276,13 +237,10 @@ extension AddNewStaffVC: UIImagePickerControllerDelegate, UINavigationController
     }
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
         imageStuff.image = info[.editedImage] as? UIImage
         imageStuff.contentMode = .scaleAspectFit
         imageStuff.clipsToBounds = true
-        
         imageIsChanged = true
-        
         dismiss(animated: true)
     }
 }

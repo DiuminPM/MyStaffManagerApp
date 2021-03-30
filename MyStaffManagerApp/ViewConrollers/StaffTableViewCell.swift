@@ -26,9 +26,13 @@ class StaffTableViewCell: UITableViewCell {
     private func initialize() {
         
         contentView.addSubview(logoStuff)
+        logoStuff.layer.cornerRadius = 10
+        logoStuff.layer.borderWidth = 2
+        logoStuff.clipsToBounds = true
         logoStuff.snp.makeConstraints { maker in
             maker.top.left.bottom.equalToSuperview().inset(5)
             maker.width.equalTo(100)
+            
             
         }
         contentView.addSubview(titleName)

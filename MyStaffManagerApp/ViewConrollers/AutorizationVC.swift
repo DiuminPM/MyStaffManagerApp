@@ -21,16 +21,6 @@ class AutorizationVC: UIViewController, UITextFieldDelegate {
 
     private func initialize() {
         view.backgroundColor = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1)
-//        let labelName = UILabel()
-//        labelName.text = "Name"
-//        labelName.font = UIFont.systemFont(ofSize: 24)
-//        view.addSubview(labelName)
-//        labelName.snp.makeConstraints { maker in
-//            maker.centerX.equalToSuperview()
-//            maker.top.equalToSuperview().inset(400)
-//
-//        }
-        
         nameTF.placeholder = "Enter your name"
         nameTF.backgroundColor = .white
         nameTF.layer.cornerRadius = 10

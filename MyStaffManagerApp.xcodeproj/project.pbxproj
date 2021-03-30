@@ -10,13 +10,11 @@
 		1F420D3D25FE905E0072EC7F /* StuffListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F420D3C25FE905E0072EC7F /* StuffListVC.swift */; };
 		1F420D4025FE90FB0072EC7F /* AllMyStaffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F420D3F25FE90FB0072EC7F /* AllMyStaffVC.swift */; };
 		1F420D4325FE91EB0072EC7F /* SectionMyStaffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F420D4225FE91EB0072EC7F /* SectionMyStaffVC.swift */; };
-		1F420D4F25FF5AD10072EC7F /* NameStaffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F420D4E25FF5AD10072EC7F /* NameStaffTableViewCell.swift */; };
 		1F93039625FE8CF100428410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F93039525FE8CF100428410 /* AppDelegate.swift */; };
 		1F93039A25FE8CF100428410 /* AutorizationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F93039925FE8CF100428410 /* AutorizationVC.swift */; };
 		1F93039F25FE8CF400428410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F93039E25FE8CF400428410 /* Assets.xcassets */; };
 		1F9303A225FE8CF400428410 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9303A025FE8CF400428410 /* LaunchScreen.storyboard */; };
 		1FB6D62925FF6C2200229A42 /* AddNewStaffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6D62825FF6C2200229A42 /* AddNewStaffVC.swift */; };
-		1FB6D63125FFA62700229A42 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6D63025FFA62700229A42 /* ImageCell.swift */; };
 		1FB6D6352600EB4200229A42 /* DetailStuffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6D6342600EB4200229A42 /* DetailStuffModel.swift */; };
 		1FB6D66226023BE200229A42 /* StaffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6D66126023BE200229A42 /* StaffTableViewCell.swift */; };
 		F423EB35B5501335F9FB6CD1 /* Pods_MyStaffManagerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57F500F69B00EC4532C8A5E /* Pods_MyStaffManagerApp.framework */; };
@@ -26,7 +24,6 @@
 		1F420D3C25FE905E0072EC7F /* StuffListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffListVC.swift; sourceTree = "<group>"; };
 		1F420D3F25FE90FB0072EC7F /* AllMyStaffVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMyStaffVC.swift; sourceTree = "<group>"; };
 		1F420D4225FE91EB0072EC7F /* SectionMyStaffVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionMyStaffVC.swift; sourceTree = "<group>"; };
-		1F420D4E25FF5AD10072EC7F /* NameStaffTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameStaffTableViewCell.swift; sourceTree = "<group>"; };
 		1F93039225FE8CF100428410 /* MyStaffManagerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStaffManagerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F93039525FE8CF100428410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F93039925FE8CF100428410 /* AutorizationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorizationVC.swift; sourceTree = "<group>"; };
@@ -34,7 +31,6 @@
 		1F9303A125FE8CF400428410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F9303A325FE8CF400428410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FB6D62825FF6C2200229A42 /* AddNewStaffVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStaffVC.swift; sourceTree = "<group>"; };
-		1FB6D63025FFA62700229A42 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		1FB6D6342600EB4200229A42 /* DetailStuffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStuffModel.swift; sourceTree = "<group>"; };
 		1FB6D66126023BE200229A42 /* StaffTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffTableViewCell.swift; sourceTree = "<group>"; };
 		A3928C0BD11056C75686BB88 /* Pods-MyStaffManagerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStaffManagerApp.release.xcconfig"; path = "Target Support Files/Pods-MyStaffManagerApp/Pods-MyStaffManagerApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,8 +57,6 @@
 				1F420D3C25FE905E0072EC7F /* StuffListVC.swift */,
 				1F420D3F25FE90FB0072EC7F /* AllMyStaffVC.swift */,
 				1F420D4225FE91EB0072EC7F /* SectionMyStaffVC.swift */,
-				1F420D4E25FF5AD10072EC7F /* NameStaffTableViewCell.swift */,
-				1FB6D63025FFA62700229A42 /* ImageCell.swift */,
 				1FB6D62825FF6C2200229A42 /* AddNewStaffVC.swift */,
 				1FB6D66126023BE200229A42 /* StaffTableViewCell.swift */,
 			);
@@ -261,9 +255,7 @@
 				1F420D3D25FE905E0072EC7F /* StuffListVC.swift in Sources */,
 				1FB6D62925FF6C2200229A42 /* AddNewStaffVC.swift in Sources */,
 				1F93039625FE8CF100428410 /* AppDelegate.swift in Sources */,
-				1FB6D63125FFA62700229A42 /* ImageCell.swift in Sources */,
 				1F420D4325FE91EB0072EC7F /* SectionMyStaffVC.swift in Sources */,
-				1F420D4F25FF5AD10072EC7F /* NameStaffTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
