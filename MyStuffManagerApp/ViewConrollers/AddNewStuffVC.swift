@@ -16,6 +16,9 @@ class AddNewStuffVC: UIViewController {
     var locationTextField = UITextField()
     var imageStuff = UIImageView()
     var newStuff: Stuff?
+    var statusTextPicker = UILabel()
+    var statusPicker = UIPickerView()
+    var textPicker = "choise a status stuff"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,6 +125,46 @@ class AddNewStuffVC: UIViewController {
             maker.left.right.equalToSuperview().inset(16)
             maker.height.equalTo(30)
         }
+        let statusLabel = UILabel()
+        statusLabel.text = "Price stuff:"
+        statusLabel.font = .systemFont(ofSize: 20)
+        view.addSubview(statusLabel)
+        statusLabel.snp.makeConstraints { maker in
+            maker.left.equalToSuperview().inset(20)
+            maker.top.equalTo(priceTextField.snp.bottom).offset(10)
+        }
+        statusTextPicker.text = textPicker
+        let touch = UITapGestureRecognizer(target: self, action: #selector(pickerHidden))
+        statusTextPicker.addGestureRecognizer(touch)
+        statusTextPicker.isUserInteractionEnabled = true
+        statusTextPicker.textAlignment = .center
+        statusTextPicker.backgroundColor = .white
+        statusTextPicker.layer.cornerRadius = 10
+        statusTextPicker.layer.borderColor = UIColor.black.cgColor
+        statusTextPicker.layer.borderWidth = 1
+        statusTextPicker.clipsToBounds = true
+        view.addSubview(statusTextPicker)
+        statusTextPicker.snp.makeConstraints { maker in
+            maker.top.equalTo(statusLabel.snp.bottom).offset(8)
+            maker.left.right.equalToSuperview().inset(16)
+            maker.height.equalTo(30)
+        }
+        statusPicker.isHidden = true
+        statusPicker.dataSource = self
+        statusPicker.delegate = self
+        statusPicker.backgroundColor = .white
+        statusPicker.layer.cornerRadius = 10
+        statusPicker.layer.borderColor = UIColor.black.cgColor
+        statusPicker.layer.borderWidth = 1
+        view.addSubview(statusPicker)
+        statusPicker.snp.makeConstraints { maker in
+            maker.top.equalTo(statusTextPicker.snp.bottom).offset(8)
+            maker.left.right.equalToSuperview().inset(16)
+        }
+    }
+    
+    @objc func pickerHidden() {
+        statusPicker.isHidden = false
     }
 //MARK: Save new stuff
     @objc func saveNewStuff() {
@@ -245,4 +288,44 @@ extension AddNewStuffVC: UIImagePickerControllerDelegate, UINavigationController
     }
 }
 
+extension AddNewStuffVC: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        9
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch row {
+        case 0:
+            textPicker = "Исполльзуется"
+        case 1:
+            textPicker = "Мои вещи"
+        case 2:
+            textPicker = "Лежат на полке"
+        case 3:
+            textPicker = "Чужие вещи"
+        case 4:
+            textPicker = "Отдал поюзать"
+        case 5:
+            textPicker = "Хочу купить"
+        case 6:
+            textPicker = "Продаю"
+        case 7:
+            textPicker = "В ремонте"
+        case 8:
+            textPicker = "Мои бывшии"
+        default:
+            break
+        }
+        return textPicker
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        statusTextPicker.text = textPicker
+        statusPicker.isHidden = true
+    }
+}
 
