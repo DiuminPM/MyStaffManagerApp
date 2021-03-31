@@ -12,6 +12,7 @@ class StuffTableViewCell: UITableViewCell {
     
     var logoStuff = UIImageView()
     var titleName = UILabel()
+    var locationName = UILabel()
     static let indentifire = "StuffTableViewCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -37,6 +38,13 @@ class StuffTableViewCell: UITableViewCell {
         titleName.snp.makeConstraints { maker in
             maker.left.equalToSuperview().inset(116)
             maker.right.equalToSuperview().inset(16)
+        }
+        contentView.addSubview(locationName)
+        locationName.text = "unknown"
+        locationName.snp.makeConstraints { maker in
+            maker.left.equalToSuperview().inset(116)
+            maker.right.equalToSuperview().inset(16)
+            maker.top.equalTo(titleName.snp.bottom).offset(5)
         }
     }
 }

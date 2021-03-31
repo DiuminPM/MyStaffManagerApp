@@ -76,6 +76,7 @@ class AllMyStuffVC: UITableViewController {
         cell.logoStuff.image = stuff.image
         cell.logoStuff.contentMode = .scaleAspectFit
         cell.titleName.text = stuff.name
+        cell.locationName.text = stuff.location
     
         return cell
     }
