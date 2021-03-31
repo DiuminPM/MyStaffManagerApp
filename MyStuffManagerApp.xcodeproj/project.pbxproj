@@ -8,36 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		1F420D3D25FE905E0072EC7F /* StuffListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F420D3C25FE905E0072EC7F /* StuffListVC.swift */; };
-		1F420D4025FE90FB0072EC7F /* AllMyStaffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F420D3F25FE90FB0072EC7F /* AllMyStaffVC.swift */; };
-		1F420D4325FE91EB0072EC7F /* SectionMyStaffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F420D4225FE91EB0072EC7F /* SectionMyStaffVC.swift */; };
+		1F420D4025FE90FB0072EC7F /* AllMyStuffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F420D3F25FE90FB0072EC7F /* AllMyStuffVC.swift */; };
+		1F420D4325FE91EB0072EC7F /* SectionMyStuffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F420D4225FE91EB0072EC7F /* SectionMyStuffVC.swift */; };
 		1F93039625FE8CF100428410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F93039525FE8CF100428410 /* AppDelegate.swift */; };
 		1F93039A25FE8CF100428410 /* AutorizationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F93039925FE8CF100428410 /* AutorizationVC.swift */; };
 		1F93039F25FE8CF400428410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F93039E25FE8CF400428410 /* Assets.xcassets */; };
 		1F9303A225FE8CF400428410 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9303A025FE8CF400428410 /* LaunchScreen.storyboard */; };
-		1FB6D62925FF6C2200229A42 /* AddNewStaffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6D62825FF6C2200229A42 /* AddNewStaffVC.swift */; };
+		1FB6D62925FF6C2200229A42 /* AddNewStuffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6D62825FF6C2200229A42 /* AddNewStuffVC.swift */; };
 		1FB6D6352600EB4200229A42 /* DetailStuffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6D6342600EB4200229A42 /* DetailStuffModel.swift */; };
-		1FB6D66226023BE200229A42 /* StaffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6D66126023BE200229A42 /* StaffTableViewCell.swift */; };
-		1FC884BA2613661900414612 /* CategoryStaffCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC884B92613661900414612 /* CategoryStaffCustomCell.swift */; };
-		F423EB35B5501335F9FB6CD1 /* Pods_MyStaffManagerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57F500F69B00EC4532C8A5E /* Pods_MyStaffManagerApp.framework */; };
+		1FB6D66226023BE200229A42 /* StuffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6D66126023BE200229A42 /* StuffTableViewCell.swift */; };
+		1FC884BA2613661900414612 /* CategoryStuffCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC884B92613661900414612 /* CategoryStuffCustomCell.swift */; };
+		23E980AAFDA95D368753E5D1 /* Pods_MyStuffManagerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78186A79066899BD0C46C9D0 /* Pods_MyStuffManagerApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F420D3C25FE905E0072EC7F /* StuffListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffListVC.swift; sourceTree = "<group>"; };
-		1F420D3F25FE90FB0072EC7F /* AllMyStaffVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMyStaffVC.swift; sourceTree = "<group>"; };
-		1F420D4225FE91EB0072EC7F /* SectionMyStaffVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionMyStaffVC.swift; sourceTree = "<group>"; };
-		1F93039225FE8CF100428410 /* MyStaffManagerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStaffManagerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F420D3F25FE90FB0072EC7F /* AllMyStuffVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMyStuffVC.swift; sourceTree = "<group>"; };
+		1F420D4225FE91EB0072EC7F /* SectionMyStuffVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionMyStuffVC.swift; sourceTree = "<group>"; };
+		1F93039225FE8CF100428410 /* MyStuffManagerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStuffManagerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F93039525FE8CF100428410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F93039925FE8CF100428410 /* AutorizationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorizationVC.swift; sourceTree = "<group>"; };
 		1F93039E25FE8CF400428410 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F9303A125FE8CF400428410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F9303A325FE8CF400428410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FB6D62825FF6C2200229A42 /* AddNewStaffVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStaffVC.swift; sourceTree = "<group>"; };
+		1FB6D62825FF6C2200229A42 /* AddNewStuffVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStuffVC.swift; sourceTree = "<group>"; };
 		1FB6D6342600EB4200229A42 /* DetailStuffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStuffModel.swift; sourceTree = "<group>"; };
-		1FB6D66126023BE200229A42 /* StaffTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffTableViewCell.swift; sourceTree = "<group>"; };
-		1FC884B92613661900414612 /* CategoryStaffCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStaffCustomCell.swift; sourceTree = "<group>"; };
-		A3928C0BD11056C75686BB88 /* Pods-MyStaffManagerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStaffManagerApp.release.xcconfig"; path = "Target Support Files/Pods-MyStaffManagerApp/Pods-MyStaffManagerApp.release.xcconfig"; sourceTree = "<group>"; };
-		B57F500F69B00EC4532C8A5E /* Pods_MyStaffManagerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyStaffManagerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F671B87B1451EE73D9C658D1 /* Pods-MyStaffManagerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStaffManagerApp.debug.xcconfig"; path = "Target Support Files/Pods-MyStaffManagerApp/Pods-MyStaffManagerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		1FB6D66126023BE200229A42 /* StuffTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffTableViewCell.swift; sourceTree = "<group>"; };
+		1FC884B92613661900414612 /* CategoryStuffCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStuffCustomCell.swift; sourceTree = "<group>"; };
+		78186A79066899BD0C46C9D0 /* Pods_MyStuffManagerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyStuffManagerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3928C0BD11056C75686BB88 /* Pods-MyStuffManagerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStuffManagerApp.release.xcconfig"; path = "Target Support Files/Pods-MyStuffManagerApp/Pods-MyStuffManagerApp.release.xcconfig"; sourceTree = "<group>"; };
+		F671B87B1451EE73D9C658D1 /* Pods-MyStuffManagerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStuffManagerApp.debug.xcconfig"; path = "Target Support Files/Pods-MyStuffManagerApp/Pods-MyStuffManagerApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F423EB35B5501335F9FB6CD1 /* Pods_MyStaffManagerApp.framework in Frameworks */,
+				23E980AAFDA95D368753E5D1 /* Pods_MyStuffManagerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,11 +57,11 @@
 			children = (
 				1F93039925FE8CF100428410 /* AutorizationVC.swift */,
 				1F420D3C25FE905E0072EC7F /* StuffListVC.swift */,
-				1F420D3F25FE90FB0072EC7F /* AllMyStaffVC.swift */,
-				1F420D4225FE91EB0072EC7F /* SectionMyStaffVC.swift */,
-				1FC884B92613661900414612 /* CategoryStaffCustomCell.swift */,
-				1FB6D62825FF6C2200229A42 /* AddNewStaffVC.swift */,
-				1FB6D66126023BE200229A42 /* StaffTableViewCell.swift */,
+				1F420D3F25FE90FB0072EC7F /* AllMyStuffVC.swift */,
+				1F420D4225FE91EB0072EC7F /* SectionMyStuffVC.swift */,
+				1FC884B92613661900414612 /* CategoryStuffCustomCell.swift */,
+				1FB6D62825FF6C2200229A42 /* AddNewStuffVC.swift */,
+				1FB6D66126023BE200229A42 /* StuffTableViewCell.swift */,
 			);
 			path = ViewConrollers;
 			sourceTree = "<group>";
@@ -94,7 +94,7 @@
 		1F93038925FE8CF100428410 = {
 			isa = PBXGroup;
 			children = (
-				1F93039425FE8CF100428410 /* MyStaffManagerApp */,
+				1F93039425FE8CF100428410 /* MyStuffManagerApp */,
 				1F93039325FE8CF100428410 /* Products */,
 				B20E933AD22625656843FF70 /* Pods */,
 				7CF292578307135A9AC89375 /* Frameworks */,
@@ -104,12 +104,12 @@
 		1F93039325FE8CF100428410 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1F93039225FE8CF100428410 /* MyStaffManagerApp.app */,
+				1F93039225FE8CF100428410 /* MyStuffManagerApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1F93039425FE8CF100428410 /* MyStaffManagerApp */ = {
+		1F93039425FE8CF100428410 /* MyStuffManagerApp */ = {
 			isa = PBXGroup;
 			children = (
 				1F420D4925FE960C0072EC7F /* Application */,
@@ -118,13 +118,13 @@
 				1F420D4B25FE96480072EC7F /* Resouses */,
 				1F9303A025FE8CF400428410 /* LaunchScreen.storyboard */,
 			);
-			path = MyStaffManagerApp;
+			path = MyStuffManagerApp;
 			sourceTree = "<group>";
 		};
 		7CF292578307135A9AC89375 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B57F500F69B00EC4532C8A5E /* Pods_MyStaffManagerApp.framework */,
+				78186A79066899BD0C46C9D0 /* Pods_MyStuffManagerApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,8 +132,8 @@
 		B20E933AD22625656843FF70 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F671B87B1451EE73D9C658D1 /* Pods-MyStaffManagerApp.debug.xcconfig */,
-				A3928C0BD11056C75686BB88 /* Pods-MyStaffManagerApp.release.xcconfig */,
+				F671B87B1451EE73D9C658D1 /* Pods-MyStuffManagerApp.debug.xcconfig */,
+				A3928C0BD11056C75686BB88 /* Pods-MyStuffManagerApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -141,9 +141,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1F93039125FE8CF100428410 /* MyStaffManagerApp */ = {
+		1F93039125FE8CF100428410 /* MyStuffManagerApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1F9303A625FE8CF400428410 /* Build configuration list for PBXNativeTarget "MyStaffManagerApp" */;
+			buildConfigurationList = 1F9303A625FE8CF400428410 /* Build configuration list for PBXNativeTarget "MyStuffManagerApp" */;
 			buildPhases = (
 				AA508112129CFC575C2CA53E /* [CP] Check Pods Manifest.lock */,
 				1F93038E25FE8CF100428410 /* Sources */,
@@ -155,9 +155,9 @@
 			);
 			dependencies = (
 			);
-			name = MyStaffManagerApp;
+			name = MyStuffManagerApp;
 			productName = MyStaffManagerApp;
-			productReference = 1F93039225FE8CF100428410 /* MyStaffManagerApp.app */;
+			productReference = 1F93039225FE8CF100428410 /* MyStuffManagerApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -174,7 +174,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1F93038D25FE8CF100428410 /* Build configuration list for PBXProject "MyStaffManagerApp" */;
+			buildConfigurationList = 1F93038D25FE8CF100428410 /* Build configuration list for PBXProject "MyStuffManagerApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -187,7 +187,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1F93039125FE8CF100428410 /* MyStaffManagerApp */,
+				1F93039125FE8CF100428410 /* MyStuffManagerApp */,
 			);
 		};
 /* End PBXProject section */
@@ -211,15 +211,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyStaffManagerApp/Pods-MyStaffManagerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MyStuffManagerApp/Pods-MyStuffManagerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyStaffManagerApp/Pods-MyStaffManagerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MyStuffManagerApp/Pods-MyStuffManagerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyStaffManagerApp/Pods-MyStaffManagerApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyStuffManagerApp/Pods-MyStuffManagerApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AA508112129CFC575C2CA53E /* [CP] Check Pods Manifest.lock */ = {
@@ -237,7 +237,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MyStaffManagerApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MyStuffManagerApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -252,14 +252,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F93039A25FE8CF100428410 /* AutorizationVC.swift in Sources */,
-				1F420D4025FE90FB0072EC7F /* AllMyStaffVC.swift in Sources */,
-				1FB6D66226023BE200229A42 /* StaffTableViewCell.swift in Sources */,
-				1FC884BA2613661900414612 /* CategoryStaffCustomCell.swift in Sources */,
+				1F420D4025FE90FB0072EC7F /* AllMyStuffVC.swift in Sources */,
+				1FB6D66226023BE200229A42 /* StuffTableViewCell.swift in Sources */,
+				1FC884BA2613661900414612 /* CategoryStuffCustomCell.swift in Sources */,
 				1FB6D6352600EB4200229A42 /* DetailStuffModel.swift in Sources */,
 				1F420D3D25FE905E0072EC7F /* StuffListVC.swift in Sources */,
-				1FB6D62925FF6C2200229A42 /* AddNewStaffVC.swift in Sources */,
+				1FB6D62925FF6C2200229A42 /* AddNewStuffVC.swift in Sources */,
 				1F93039625FE8CF100428410 /* AppDelegate.swift in Sources */,
-				1F420D4325FE91EB0072EC7F /* SectionMyStaffVC.swift in Sources */,
+				1F420D4325FE91EB0072EC7F /* SectionMyStuffVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,19 +395,19 @@
 		};
 		1F9303A725FE8CF400428410 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F671B87B1451EE73D9C658D1 /* Pods-MyStaffManagerApp.debug.xcconfig */;
+			baseConfigurationReference = F671B87B1451EE73D9C658D1 /* Pods-MyStuffManagerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4V2Z42C6DZ;
-				INFOPLIST_FILE = MyStaffManagerApp/Resouses/Info.plist;
+				INFOPLIST_FILE = MyStuffManagerApp/Resouses/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Diumin.MyStaffManagerApp;
+				PRODUCT_BUNDLE_IDENTIFIER = Diumin.MyStuffManagerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -416,19 +416,19 @@
 		};
 		1F9303A825FE8CF400428410 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3928C0BD11056C75686BB88 /* Pods-MyStaffManagerApp.release.xcconfig */;
+			baseConfigurationReference = A3928C0BD11056C75686BB88 /* Pods-MyStuffManagerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4V2Z42C6DZ;
-				INFOPLIST_FILE = MyStaffManagerApp/Resouses/Info.plist;
+				INFOPLIST_FILE = MyStuffManagerApp/Resouses/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Diumin.MyStaffManagerApp;
+				PRODUCT_BUNDLE_IDENTIFIER = Diumin.MyStuffManagerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -438,7 +438,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1F93038D25FE8CF100428410 /* Build configuration list for PBXProject "MyStaffManagerApp" */ = {
+		1F93038D25FE8CF100428410 /* Build configuration list for PBXProject "MyStuffManagerApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1F9303A425FE8CF400428410 /* Debug */,
@@ -447,7 +447,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1F9303A625FE8CF400428410 /* Build configuration list for PBXNativeTarget "MyStaffManagerApp" */ = {
+		1F9303A625FE8CF400428410 /* Build configuration list for PBXNativeTarget "MyStuffManagerApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1F9303A725FE8CF400428410 /* Debug */,

@@ -1,6 +1,6 @@
 //
-//  CategoryStaffCustomCell.swift
-//  MyStaffManagerApp
+//  CategoryStuffCustomCell.swift
+//  MyStuffManagerApp
 //
 //  Created by DiuminPM on 30.03.2021.
 //
@@ -8,10 +8,10 @@
 import UIKit
 import SnapKit
 
-class CategoryStaffCustomCell: UITableViewCell {
+class CategoryStuffCustomCell: UITableViewCell {
     
     var titleNameCategory = UILabel()
-    static let indentifire = "CategoryStaffCustomCell"
+    static let indentifire = "CategoryStuffCustomCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

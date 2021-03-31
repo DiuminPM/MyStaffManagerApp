@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  MyStaffManagerApp
+//  MyStuffManagerApp
 //
 //  Created by DiuminPM on 14.03.2021.
 //

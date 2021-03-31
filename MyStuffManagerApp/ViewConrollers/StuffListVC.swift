@@ -1,6 +1,6 @@
 //
 //  StuffListVC.swift
-//  MyStaffManagerApp
+//  MyStuffManagerApp
 //
 //  Created by DiuminPM on 14.03.2021.
 //
@@ -19,11 +19,11 @@ class SelectionViewController: UITabBarController {
     
     private func setupTabBar() {
 
-        let firstVC = UINavigationController(rootViewController: AllMyStaffVC())
-        firstVC.tabBarItem.title = "AllMyStaff"
+        let firstVC = UINavigationController(rootViewController: AllMyStuffVC())
+        firstVC.tabBarItem.title = "AllMyStuff"
 //        firstVC.tabBarItem = UITabBarItem.init(tabBarSystemItem: .favorites, tag: 1)
 
-        let secondVC = UINavigationController(rootViewController: SectionMyStaffVC())
+        let secondVC = UINavigationController(rootViewController: SectionMyStuffVC())
         secondVC.tabBarItem.title = "Category Stuff"
 //        secondVC.tabBarItem = UITabBarItem.init()
 

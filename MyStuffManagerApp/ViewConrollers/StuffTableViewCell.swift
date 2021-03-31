@@ -1,6 +1,6 @@
 //
-//  staffTableViewCell.swift
-//  MyStaffManagerApp
+//  stuffTableViewCell.swift
+//  MyStuffManagerApp
 //
 //  Created by DiuminPM on 17.03.2021.
 //
@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 
-class StaffTableViewCell: UITableViewCell {
+class StuffTableViewCell: UITableViewCell {
     
     var logoStuff = UIImageView()
     var titleName = UILabel()
-    static let indentifire = "StaffTableViewCell"
+    static let indentifire = "StuffTableViewCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

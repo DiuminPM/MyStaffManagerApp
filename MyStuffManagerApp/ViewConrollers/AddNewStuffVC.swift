@@ -1,6 +1,6 @@
 //
-//  AddNewStaffVC.swift
-//  MyStaffManagerApp
+//  AddNewStuffVC.swift
+//  MyStuffManagerApp
 //
 //  Created by DiuminPM on 15.03.2021.
 //
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class AddNewStaffVC: UIViewController {
+class AddNewStuffVC: UIViewController {
     var imageIsChanged = false
     var nameTextField = UITextField()
     var priceTextField = UITextField()
@@ -146,7 +146,7 @@ class AddNewStaffVC: UIViewController {
     
 //MARK: Work with NavigationBar
     private func setupNavigationBar() {
-        self.navigationItem.title = "Add staff"
+        self.navigationItem.title = "Add stuff"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .cancel,
             target: self,
@@ -163,7 +163,7 @@ class AddNewStaffVC: UIViewController {
         dismiss(animated: true)
     }
     
-    @objc func addNewStaff() {
+    @objc func addNewStuff() {
         let mainVC = AutorizationVC()
         mainVC.modalPresentationStyle = .fullScreen
         mainVC.modalTransitionStyle = .flipHorizontal
@@ -196,7 +196,7 @@ class AddNewStaffVC: UIViewController {
 }
 
 //MARK: Extension UITextField
-extension AddNewStaffVC: UITextFieldDelegate {
+extension AddNewStuffVC: UITextFieldDelegate {
         // двигаем экран чтобы поля не закрывала клавиатура
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == serialNumberTextField {
@@ -224,7 +224,7 @@ extension AddNewStaffVC: UITextFieldDelegate {
 }
 
 //MARK: Work with image
-extension AddNewStaffVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension AddNewStuffVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) {

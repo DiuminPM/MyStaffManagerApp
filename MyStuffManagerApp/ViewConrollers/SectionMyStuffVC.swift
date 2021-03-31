@@ -1,6 +1,6 @@
 //
-//  SectionMyStaffVC.swift
-//  MyStaffManagerApp
+//  SectionMyStuffVC.swift
+//  MyStuffManagerApp
 //
 //  Created by DiuminPM on 14.03.2021.
 //
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class SectionMyStaffVC: UITableViewController {
+class SectionMyStuffVC: UITableViewController {
     
-    var staffs = [""]
     var cellIndentyfire = "Cell"
 
     override func viewDidLoad() {
@@ -21,7 +20,8 @@ class SectionMyStaffVC: UITableViewController {
     
     func createdTableView() {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIndentyfire)
-        self.tableView.register(CategoryStaffCustomCell.self, forCellReuseIdentifier: CategoryStaffCustomCell.indentifire)
+        self.tableView.register(CategoryStuffCustomCell.self, forCellReuseIdentifier: CategoryStuffCustomCell.indentifire)
+        tableView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
     }
 
     private func setupNavigationBar() {
@@ -49,7 +49,7 @@ class SectionMyStaffVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: CategoryStaffCustomCell.indentifire, for: indexPath) as! CategoryStaffCustomCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: CategoryStuffCustomCell.indentifire, for: indexPath) as! CategoryStuffCustomCell
         switch indexPath.row {
         case 0:
             cell.titleNameCategory.text = "Используется"

@@ -1,13 +1,13 @@
 //
-//  AllMyStaffVC.swift
-//  MyStaffManagerApp
+//  AllMyStuffVC.swift
+//  MyStuffManagerApp
 //
 //  Created by DiuminPM on 14.03.2021.
 //
 
 import UIKit
 
-class AllMyStaffVC: UITableViewController {
+class AllMyStuffVC: UITableViewController {
 
     let cellIndentyfire = "Cell"
     
@@ -23,7 +23,7 @@ class AllMyStaffVC: UITableViewController {
     func createdTableView() {
         self.tableView.backgroundColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIndentyfire)
-        self.tableView.register(StaffTableViewCell.self, forCellReuseIdentifier: StaffTableViewCell.indentifire)
+        self.tableView.register(StuffTableViewCell.self, forCellReuseIdentifier: StuffTableViewCell.indentifire)
        
     }
     
@@ -32,7 +32,7 @@ class AllMyStaffVC: UITableViewController {
     }
     
     private func setupNavigationBar() {
-        self.navigationItem.title = "My staff"
+        self.navigationItem.title = "My stuff"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .cancel,
             target: self,
@@ -41,7 +41,7 @@ class AllMyStaffVC: UITableViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
-            action: #selector(addNewStaff)
+            action: #selector(addNewStuff)
         )
     }
     
@@ -52,7 +52,7 @@ class AllMyStaffVC: UITableViewController {
         present(mainVC, animated: true)
     }
     @objc func addStuff() {
-        let newStuff = AddNewStaffVC()
+        let newStuff = AddNewStuffVC()
         newStuff.saveNewStuff()
         stuffs.append(newStuff.newStuff!)
         print("check")
@@ -60,8 +60,8 @@ class AllMyStaffVC: UITableViewController {
         print(stuffs)
     }
     
-    @objc func addNewStaff() {
-        let addVC = UINavigationController(rootViewController: AddNewStaffVC())
+    @objc func addNewStuff() {
+        let addVC = UINavigationController(rootViewController: AddNewStuffVC())
         addVC.modalPresentationStyle = .fullScreen
         navigationController?.present(addVC, animated: true)
     }
@@ -71,7 +71,7 @@ class AllMyStaffVC: UITableViewController {
         return stuffs.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: StaffTableViewCell.indentifire, for: indexPath) as! StaffTableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: StuffTableViewCell.indentifire, for: indexPath) as! StuffTableViewCell
         let stuff = stuffs[indexPath.row]
         cell.logoStuff.image = stuff.image
         cell.logoStuff.contentMode = .scaleAspectFit
