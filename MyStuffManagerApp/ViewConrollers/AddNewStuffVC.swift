@@ -19,6 +19,9 @@ class AddNewStuffVC: UIViewController {
     var statusTextPicker = UILabel()
     var statusPicker = UIPickerView()
     var textPicker = "choise a status stuff"
+    var viewScroll = UIScrollView()
+    let contentView = UIView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +29,19 @@ class AddNewStuffVC: UIViewController {
         initialize()
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         nameTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        view.addSubview(viewScroll)
+        viewScroll.snp.makeConstraints { maker in
+            maker.edges.equalTo(view)
         }
+        self.viewScroll.addSubview(contentView)
+        contentView.snp.makeConstraints { maker in
+            maker.top.bottom.equalTo(self.viewScroll)
+                maker.left.right.equalTo(self.view)
+                maker.width.equalTo(self.viewScroll)
+                maker.height.equalTo(self.viewScroll)
+        }
+        
+    }
     
     private func initialize() {
         view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
@@ -35,7 +50,7 @@ class AddNewStuffVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(addPhoto))
         imageStuff.addGestureRecognizer(tap)
         imageStuff.isUserInteractionEnabled = true
-        view.addSubview(imageStuff)
+        contentView.addSubview(imageStuff)
         imageStuff.snp.makeConstraints { maker in
             maker.top.equalToSuperview().inset(100)
             maker.centerX.equalToSuperview().offset(10)
@@ -44,7 +59,7 @@ class AddNewStuffVC: UIViewController {
         let nameLabel = UILabel()
         nameLabel.text = "Name:"
         nameLabel.font = .systemFont(ofSize: 20)
-        view.addSubview(nameLabel)
+        contentView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { maker in
             maker.left.equalToSuperview().inset(20)
             maker.top.equalTo(imageStuff.snp.bottom).offset(16)
@@ -56,7 +71,7 @@ class AddNewStuffVC: UIViewController {
         nameTextField.layer.borderWidth = 1
         nameTextField.delegate = self
         nameTextField.indent(size: 10)
-        view.addSubview(nameTextField)
+        contentView.addSubview(nameTextField)
         nameTextField.snp.makeConstraints { maker in
             maker.top.equalTo(nameLabel.snp.bottom).offset(8)
             maker.left.right.equalToSuperview().inset(16)
@@ -65,7 +80,7 @@ class AddNewStuffVC: UIViewController {
         let locationLabel = UILabel()
         locationLabel.text = "Location stuff:"
         locationLabel.font = .systemFont(ofSize: 20)
-        view.addSubview(locationLabel)
+        contentView.addSubview(locationLabel)
         locationLabel.snp.makeConstraints { maker in
             maker.left.equalToSuperview().inset(20)
             maker.top.equalTo(nameTextField.snp.bottom).offset(10)
@@ -77,7 +92,7 @@ class AddNewStuffVC: UIViewController {
         locationTextField.layer.borderWidth = 1
         locationTextField.delegate = self
         locationTextField.indent(size: 10)
-        view.addSubview(locationTextField)
+        contentView.addSubview(locationTextField)
         locationTextField.snp.makeConstraints { maker in
             maker.top.equalTo(locationLabel.snp.bottom).offset(8)
             maker.left.right.equalToSuperview().inset(16)
@@ -86,7 +101,7 @@ class AddNewStuffVC: UIViewController {
         let serialNumberLabel = UILabel()
         serialNumberLabel.text = "Serial number:"
         serialNumberLabel.font = .systemFont(ofSize: 20)
-        view.addSubview(serialNumberLabel)
+        contentView.addSubview(serialNumberLabel)
         serialNumberLabel.snp.makeConstraints { maker in
             maker.left.equalToSuperview().inset(20)
             maker.top.equalTo(locationTextField.snp.bottom).offset(10)
@@ -98,7 +113,7 @@ class AddNewStuffVC: UIViewController {
         serialNumberTextField.layer.borderWidth = 1
         serialNumberTextField.delegate = self
         serialNumberTextField.indent(size: 10)
-        view.addSubview(serialNumberTextField)
+        contentView.addSubview(serialNumberTextField)
         serialNumberTextField.snp.makeConstraints { maker in
             maker.top.equalTo(serialNumberLabel.snp.bottom).offset(8)
             maker.left.right.equalToSuperview().inset(16)
@@ -107,7 +122,7 @@ class AddNewStuffVC: UIViewController {
         let priceLabel = UILabel()
         priceLabel.text = "Price stuff:"
         priceLabel.font = .systemFont(ofSize: 20)
-        view.addSubview(priceLabel)
+        contentView.addSubview(priceLabel)
         priceLabel.snp.makeConstraints { maker in
             maker.left.equalToSuperview().inset(20)
             maker.top.equalTo(serialNumberTextField.snp.bottom).offset(10)
@@ -119,7 +134,7 @@ class AddNewStuffVC: UIViewController {
         priceTextField.layer.borderWidth = 1
         priceTextField.delegate = self
         priceTextField.indent(size: 10)
-        view.addSubview(priceTextField)
+        contentView.addSubview(priceTextField)
         priceTextField.snp.makeConstraints { maker in
             maker.top.equalTo(priceLabel.snp.bottom).offset(8)
             maker.left.right.equalToSuperview().inset(16)
@@ -128,7 +143,7 @@ class AddNewStuffVC: UIViewController {
         let statusLabel = UILabel()
         statusLabel.text = "Price stuff:"
         statusLabel.font = .systemFont(ofSize: 20)
-        view.addSubview(statusLabel)
+        contentView.addSubview(statusLabel)
         statusLabel.snp.makeConstraints { maker in
             maker.left.equalToSuperview().inset(20)
             maker.top.equalTo(priceTextField.snp.bottom).offset(10)
@@ -143,7 +158,7 @@ class AddNewStuffVC: UIViewController {
         statusTextPicker.layer.borderColor = UIColor.black.cgColor
         statusTextPicker.layer.borderWidth = 1
         statusTextPicker.clipsToBounds = true
-        view.addSubview(statusTextPicker)
+        contentView.addSubview(statusTextPicker)
         statusTextPicker.snp.makeConstraints { maker in
             maker.top.equalTo(statusLabel.snp.bottom).offset(8)
             maker.left.right.equalToSuperview().inset(16)
@@ -156,7 +171,7 @@ class AddNewStuffVC: UIViewController {
         statusPicker.layer.cornerRadius = 10
         statusPicker.layer.borderColor = UIColor.black.cgColor
         statusPicker.layer.borderWidth = 1
-        view.addSubview(statusPicker)
+        contentView.addSubview(statusPicker)
         statusPicker.snp.makeConstraints { maker in
             maker.top.equalTo(statusTextPicker.snp.bottom).offset(8)
             maker.left.right.equalToSuperview().inset(16)
@@ -165,6 +180,7 @@ class AddNewStuffVC: UIViewController {
     
     @objc func pickerHidden() {
         statusPicker.isHidden = false
+//        self.contentView.frame.origin.y = -200
     }
 //MARK: Save new stuff
     @objc func saveNewStuff() {
@@ -326,6 +342,7 @@ extension AddNewStuffVC: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         statusTextPicker.text = textPicker
         statusPicker.isHidden = true
+        
     }
 }
 
