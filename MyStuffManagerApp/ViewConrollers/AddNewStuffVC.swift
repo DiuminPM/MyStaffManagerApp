@@ -36,9 +36,9 @@ class AddNewStuffVC: UIViewController {
         self.viewScroll.addSubview(contentView)
         contentView.snp.makeConstraints { maker in
             maker.top.bottom.equalTo(self.viewScroll)
-                maker.left.right.equalTo(self.view)
-                maker.width.equalTo(self.viewScroll)
-                maker.height.equalTo(self.viewScroll)
+            maker.left.right.equalTo(self.view)
+            maker.width.equalTo(self.viewScroll)
+            maker.height.equalTo(self.viewScroll)
         }
         
     }
@@ -52,7 +52,7 @@ class AddNewStuffVC: UIViewController {
         imageStuff.isUserInteractionEnabled = true
         contentView.addSubview(imageStuff)
         imageStuff.snp.makeConstraints { maker in
-            maker.top.equalToSuperview().inset(100)
+            maker.top.equalTo(10)
             maker.centerX.equalToSuperview().offset(10)
             maker.height.equalTo(150)
         }
@@ -175,6 +175,7 @@ class AddNewStuffVC: UIViewController {
         statusPicker.snp.makeConstraints { maker in
             maker.top.equalTo(statusTextPicker.snp.bottom).offset(8)
             maker.left.right.equalToSuperview().inset(16)
+            maker.bottom.equalTo(-50)
         }
     }
     
