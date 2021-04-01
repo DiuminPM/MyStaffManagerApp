@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AllMyStuffVC: UITableViewController {
 
@@ -50,6 +51,12 @@ class AllMyStuffVC: UITableViewController {
         mainVC.modalPresentationStyle = .fullScreen
         mainVC.modalTransitionStyle = .flipHorizontal
         present(mainVC, animated: true)
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
     }
     @objc func addStuff() {
         let newStuff = AddNewStuffVC()

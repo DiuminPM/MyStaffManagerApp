@@ -7,34 +7,48 @@
 
 import UIKit
 import SnapKit
+import Firebase
 
 class AutorizationVC: UIViewController {
     
-    let nameTF = UITextField()
+    let emailTF = UITextField()
     let passwordTF = UITextField()
     let buttonLogIn = UIButton(type: .system)
     let buttonRegistered = UIButton(type: .system)
+    let warningLabel = UILabel()
+
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
         buttonLogIn.isEnabled = false
+        buttonRegistered.isEnabled = false
+        warningLabel.alpha = 0
+        
+       
     }
 
     private func initialize() {
+        Auth.auth().addStateDidChangeListener { [weak self](auth, user) in
+            if user != nil {
+                let selectionCityVC = SelectionViewController()
+                selectionCityVC.modalPresentationStyle = .fullScreen
+                self?.present(selectionCityVC, animated: false)
+            }
+        }
         view.backgroundColor = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1)
-        nameTF.placeholder = "Enter your name"
-        nameTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
-        nameTF.delegate = self
-        nameTF.backgroundColor = .white
-        nameTF.layer.cornerRadius = 10
-        nameTF.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        nameTF.layer.borderColor = UIColor.black.cgColor
-        nameTF.layer.borderWidth = 1
-        nameTF.indent(size: 10)
-        view.addSubview(nameTF)
-        nameTF.snp.makeConstraints { maker in
+        emailTF.placeholder = "Enter your email"
+        emailTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        emailTF.delegate = self
+        emailTF.backgroundColor = .white
+        emailTF.layer.cornerRadius = 10
+        emailTF.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        emailTF.layer.borderColor = UIColor.black.cgColor
+        emailTF.layer.borderWidth = 1
+        emailTF.indent(size: 10)
+        view.addSubview(emailTF)
+        emailTF.snp.makeConstraints { maker in
             maker.centerX.centerY.equalToSuperview()
             maker.left.right.equalToSuperview().inset(16)
             maker.height.equalTo(40)
@@ -60,14 +74,14 @@ class AutorizationVC: UIViewController {
         passwordTF.indent(size: 10)
         view.addSubview(passwordTF)
         passwordTF.snp.makeConstraints { maker in
-            maker.top.equalTo(nameTF).inset(39)
+            maker.top.equalTo(emailTF).inset(39)
             maker.centerX.equalToSuperview()
             maker.left.right.equalToSuperview().inset(16)
             maker.height.equalTo(40)
         }
         buttonLogIn.setTitleColor(.white, for: .normal)
         buttonLogIn.setTitle("Log in", for: .normal)
-        buttonLogIn.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        buttonLogIn.addTarget(self, action: #selector(buttonPressedLogIn), for: .touchUpInside)
         buttonLogIn.backgroundColor = .systemBlue
         buttonLogIn.layer.cornerRadius = 10
         view.addSubview(buttonLogIn)
@@ -77,7 +91,7 @@ class AutorizationVC: UIViewController {
         }
         buttonRegistered.setTitleColor(.white, for: .normal)
         buttonRegistered.setTitle("Registered", for: .normal)
-        buttonRegistered.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        buttonRegistered.addTarget(self, action: #selector(buttonPressedRegister), for: .touchUpInside)
         buttonRegistered.backgroundColor = .systemBlue
         buttonRegistered.layer.cornerRadius = 10
         view.addSubview(buttonRegistered)
@@ -85,24 +99,50 @@ class AutorizationVC: UIViewController {
             maker.top.equalTo(buttonLogIn.snp.bottom).offset(10)
             maker.left.right.equalToSuperview().inset(16)
         }
-        let notExistLabel = UILabel()
-        notExistLabel.text = "User does not exist"
-        notExistLabel.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
-        notExistLabel.isHidden = true
-        view.addSubview(notExistLabel)
-        notExistLabel.snp.makeConstraints { maker in
+        warningLabel.text = "User does not exist"
+        warningLabel.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        view.addSubview(warningLabel)
+        warningLabel.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
             maker.top.equalTo(buttonRegistered.snp.bottom).offset(15)
         }
     }
+    func displayWarningLable(withText text: String) {
+        warningLabel.text = text
+        UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+            [weak self] in self?.warningLabel.alpha = 1
+        }) { [weak self] complete in
+            self?.warningLabel.alpha = 0
+        }
+        
+    }
     
-    @objc private func buttonPressed() {
+    @objc private func buttonPressedLogIn() {
+        Auth.auth().signIn(withEmail: emailTF.text!, password: passwordTF.text!) { [weak self] (user, error) in
+            if error != nil {
+                self?.displayWarningLable(withText: "error ocured")
+                return
+            }
+            if user != nil {
+                let selectionCityVC = SelectionViewController()
+                selectionCityVC.modalPresentationStyle = .fullScreen
+                self?.present(selectionCityVC, animated: false)
+            }
+        }
+    }
+    
+    
+    @objc private func buttonPressedRegister() {
         
-        let selectionCityVC = SelectionViewController()
-        selectionCityVC.modalPresentationStyle = .fullScreen
-        present(selectionCityVC, animated: false)
-        
-//        navigationController?.pushViewController(selectionCityVC, animated: true)
+        Auth.auth().createUser(withEmail: emailTF.text!, password: passwordTF.text!) { [weak self] (user, error) in
+            if error == nil {
+                if user != nil {
+                    let selectionCityVC = SelectionViewController()
+                    selectionCityVC.modalPresentationStyle = .fullScreen
+                    self?.present(selectionCityVC, animated: false)
+                }
+            }
+        }
     }
     
 }
@@ -122,10 +162,12 @@ extension AutorizationVC: UITextFieldDelegate {
     }
         // активность кнопки "add(+)" в зависимости от наличии текста
     @objc private func textFieldChanged() {
-        if nameTF.text!.isEmpty == false && passwordTF.text?.isEmpty == false {
+        if emailTF.text!.isEmpty == false && passwordTF.text?.isEmpty == false {
             buttonLogIn.isEnabled = true
+            buttonRegistered.isEnabled = true
         } else {
             buttonLogIn.isEnabled = false
+            buttonRegistered.isEnabled = false
         }
     }
 }

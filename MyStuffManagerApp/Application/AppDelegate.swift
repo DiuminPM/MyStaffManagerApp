@@ -16,11 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.makeKeyAndVisible()
             window?.rootViewController = AutorizationVC()
-            FirebaseApp.configure()
+//            FirebaseApp.configure()
             
             return true
 
         }
+    override init() {
+       super.init()
+        FirebaseApp.configure()       // not really needed unless you really need it FIRDatabase.database().persistenceEnabled = true
+    }
 
    
 
