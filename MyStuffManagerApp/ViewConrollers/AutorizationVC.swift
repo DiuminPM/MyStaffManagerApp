@@ -8,20 +8,25 @@
 import UIKit
 import SnapKit
 
-class AutorizationVC: UIViewController, UITextFieldDelegate {
+class AutorizationVC: UIViewController {
     
     let nameTF = UITextField()
     let passwordTF = UITextField()
+    let buttonLogIn = UIButton(type: .system)
+    let buttonRegistered = UIButton(type: .system)
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
-        nameTF.delegate = self
+        buttonLogIn.isEnabled = false
     }
 
     private func initialize() {
         view.backgroundColor = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1)
         nameTF.placeholder = "Enter your name"
+        nameTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        nameTF.delegate = self
         nameTF.backgroundColor = .white
         nameTF.layer.cornerRadius = 10
         nameTF.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
@@ -44,6 +49,8 @@ class AutorizationVC: UIViewController, UITextFieldDelegate {
 //
 //        }
         passwordTF.placeholder = "Enter your password"
+        passwordTF.delegate = self
+        passwordTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         passwordTF.isSecureTextEntry = true
         passwordTF.backgroundColor = .white
         passwordTF.layer.cornerRadius = 10
@@ -58,7 +65,6 @@ class AutorizationVC: UIViewController, UITextFieldDelegate {
             maker.left.right.equalToSuperview().inset(16)
             maker.height.equalTo(40)
         }
-        let buttonLogIn = UIButton(type: .system)
         buttonLogIn.setTitleColor(.white, for: .normal)
         buttonLogIn.setTitle("Log in", for: .normal)
         buttonLogIn.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
@@ -68,9 +74,7 @@ class AutorizationVC: UIViewController, UITextFieldDelegate {
         buttonLogIn.snp.makeConstraints { maker in
             maker.top.equalTo(passwordTF).inset(60)
             maker.left.right.equalToSuperview().inset(16)
-            
         }
-        let buttonRegistered = UIButton(type: .system)
         buttonRegistered.setTitleColor(.white, for: .normal)
         buttonRegistered.setTitle("Registered", for: .normal)
         buttonRegistered.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
@@ -101,11 +105,29 @@ class AutorizationVC: UIViewController, UITextFieldDelegate {
 //        navigationController?.pushViewController(selectionCityVC, animated: true)
     }
     
+}
+
+//MARK: Extension UITextField
+extension AutorizationVC: UITextFieldDelegate {
+        // двигаем экран чтобы поля не закрывала клавиатура
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+       
+            self.view.frame.origin.y = -150
+        }
+        // Скрываем клавиатуру по нажатию на Done и сдвигаем обратно
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.view.frame.origin.y = 0
         return true
     }
-    
-
+        // активность кнопки "add(+)" в зависимости от наличии текста
+    @objc private func textFieldChanged() {
+        if nameTF.text!.isEmpty == false && passwordTF.text?.isEmpty == false {
+            buttonLogIn.isEnabled = true
+        } else {
+            buttonLogIn.isEnabled = false
+        }
+    }
 }
 // расширение для отступа использовать: textField.indent(size: 10)
 extension UITextField {
