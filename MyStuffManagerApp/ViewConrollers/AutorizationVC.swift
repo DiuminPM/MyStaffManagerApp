@@ -44,6 +44,7 @@ class AutorizationVC: UIViewController, UITextFieldDelegate {
 //
 //        }
         passwordTF.placeholder = "Enter your password"
+        passwordTF.isSecureTextEntry = true
         passwordTF.backgroundColor = .white
         passwordTF.layer.cornerRadius = 10
         passwordTF.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
@@ -68,6 +69,26 @@ class AutorizationVC: UIViewController, UITextFieldDelegate {
             maker.top.equalTo(passwordTF).inset(60)
             maker.left.right.equalToSuperview().inset(16)
             
+        }
+        let buttonRegistered = UIButton(type: .system)
+        buttonRegistered.setTitleColor(.white, for: .normal)
+        buttonRegistered.setTitle("Registered", for: .normal)
+        buttonRegistered.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        buttonRegistered.backgroundColor = .systemBlue
+        buttonRegistered.layer.cornerRadius = 10
+        view.addSubview(buttonRegistered)
+        buttonRegistered.snp.makeConstraints { maker in
+            maker.top.equalTo(buttonLogIn.snp.bottom).offset(10)
+            maker.left.right.equalToSuperview().inset(16)
+        }
+        let notExistLabel = UILabel()
+        notExistLabel.text = "User does not exist"
+        notExistLabel.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        notExistLabel.isHidden = true
+        view.addSubview(notExistLabel)
+        notExistLabel.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.top.equalTo(buttonRegistered.snp.bottom).offset(15)
         }
     }
     
