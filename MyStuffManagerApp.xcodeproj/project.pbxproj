@@ -19,6 +19,7 @@
 		1FB6D6352600EB4200229A42 /* DetailStuffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6D6342600EB4200229A42 /* DetailStuffModel.swift */; };
 		1FB6D66226023BE200229A42 /* StuffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB6D66126023BE200229A42 /* StuffTableViewCell.swift */; };
 		1FC884BA2613661900414612 /* CategoryStuffCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC884B92613661900414612 /* CategoryStuffCustomCell.swift */; };
+		1FFFDEB8261732B1000FA6C2 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFFDEB7261732B1000FA6C2 /* AppUser.swift */; };
 		23E980AAFDA95D368753E5D1 /* Pods_MyStuffManagerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78186A79066899BD0C46C9D0 /* Pods_MyStuffManagerApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		1FB6D6342600EB4200229A42 /* DetailStuffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStuffModel.swift; sourceTree = "<group>"; };
 		1FB6D66126023BE200229A42 /* StuffTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffTableViewCell.swift; sourceTree = "<group>"; };
 		1FC884B92613661900414612 /* CategoryStuffCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStuffCustomCell.swift; sourceTree = "<group>"; };
+		1FFFDEB7261732B1000FA6C2 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		78186A79066899BD0C46C9D0 /* Pods_MyStuffManagerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyStuffManagerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3928C0BD11056C75686BB88 /* Pods-MyStuffManagerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStuffManagerApp.release.xcconfig"; path = "Target Support Files/Pods-MyStuffManagerApp/Pods-MyStuffManagerApp.release.xcconfig"; sourceTree = "<group>"; };
 		F671B87B1451EE73D9C658D1 /* Pods-MyStuffManagerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStuffManagerApp.debug.xcconfig"; path = "Target Support Files/Pods-MyStuffManagerApp/Pods-MyStuffManagerApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				1FB6D6342600EB4200229A42 /* DetailStuffModel.swift */,
+				1FFFDEB7261732B1000FA6C2 /* AppUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				1F420D3D25FE905E0072EC7F /* StuffListVC.swift in Sources */,
 				1FB6D62925FF6C2200229A42 /* AddNewStuffVC.swift in Sources */,
 				1F93039625FE8CF100428410 /* AppDelegate.swift in Sources */,
+				1FFFDEB8261732B1000FA6C2 /* AppUser.swift in Sources */,
 				1F420D4325FE91EB0072EC7F /* SectionMyStuffVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

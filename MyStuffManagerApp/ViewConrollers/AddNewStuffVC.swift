@@ -7,8 +7,11 @@
 
 import UIKit
 import SnapKit
+import Firebase
 
 class AddNewStuffVC: UIViewController {
+    var user: AppUser!
+    var ref: DatabaseReference!
     var imageIsChanged = false
     var nameTextField = UITextField()
     var priceTextField = UITextField()
@@ -40,6 +43,10 @@ class AddNewStuffVC: UIViewController {
             maker.width.equalTo(self.viewScroll)
             maker.height.equalTo(self.viewScroll)
         }
+        
+        guard let currentUser = Auth.auth().currentUser else { return }
+        user = AppUser(user: currentUser)
+        ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("stuffs")
         
     }
     
@@ -197,7 +204,11 @@ class AddNewStuffVC: UIViewController {
                          price: priceTextField.text,
                          serialNumber: serialNumberTextField.text,
                          location: locationTextField.text,
-                         image: image)
+                         image: image,
+                         userId: self.user.uid)
+        let stuffRef = self.ref.child(newStuff!.name.lowercased())
+        stuffRef.setValue(newStuff?.convertToDictionary())
+        
         stuffs.append(newStuff!)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         dismiss(animated: true)
