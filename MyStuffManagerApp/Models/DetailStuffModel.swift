@@ -13,11 +13,11 @@ struct Stuff {
     var price: String?
     var serialNumber: String?
     var location: String?
-    var image: UIImage?
+    var image: String?
     let userId: String
-    let ref: DatabaseReference?
+    var ref: DatabaseReference?
     
-    init(name: String, price: String?, serialNumber: String?, location: String?, image: UIImage?, userId: String) {
+    init(name: String, price: String?, serialNumber: String?, location: String?, image: String?, userId: String) {
         self.name = name
         self.price = price
         self.serialNumber = serialNumber
@@ -30,10 +30,10 @@ struct Stuff {
     init(snapShot:DataSnapshot) {
         let snapShotValue = snapShot.value as! [String : AnyObject]
         name = snapShotValue["name"] as! String
-        price = snapShotValue["price"] as! String?
-        serialNumber = snapShotValue["serialNumber"] as! String?
-        location = snapShotValue["location"] as! String?
-        image = snapShotValue["image"] as! UIImage?
+        price = snapShotValue["price"] as? String
+        serialNumber = snapShotValue["serialNumber"] as? String
+        location = snapShotValue["location"] as? String
+        image = snapShotValue["image"] as? String
         userId = snapShotValue["userId"] as! String
         ref = snapShot.ref
     }

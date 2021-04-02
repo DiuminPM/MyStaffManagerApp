@@ -204,7 +204,7 @@ class AddNewStuffVC: UIViewController {
                          price: priceTextField.text,
                          serialNumber: serialNumberTextField.text,
                          location: locationTextField.text,
-                         image: image,
+                         image: locationTextField.text,
                          userId: self.user.uid)
         let stuffRef = self.ref.child(newStuff!.name.lowercased())
         stuffRef.setValue(newStuff?.convertToDictionary())

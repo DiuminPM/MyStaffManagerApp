@@ -80,7 +80,7 @@ class AllMyStuffVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: StuffTableViewCell.indentifire, for: indexPath) as! StuffTableViewCell
         let stuff = stuffs[indexPath.row]
-        cell.logoStuff.image = stuff.image
+//        cell.logoStuff.image = stuff.image
         cell.logoStuff.contentMode = .scaleAspectFit
         cell.titleName.text = stuff.name
         cell.locationName.text = stuff.location
