@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Firebase
+import FirebaseStorage
 
 class AddNewStuffVC: UIViewController {
     var user: AppUser!
@@ -190,6 +191,7 @@ class AddNewStuffVC: UIViewController {
         statusPicker.isHidden = false
 //        self.contentView.frame.origin.y = -200
     }
+    
 //MARK: Save new stuff
     @objc func saveNewStuff() {
         
@@ -200,19 +202,35 @@ class AddNewStuffVC: UIViewController {
         } else {
             image = #imageLiteral(resourceName: "photo")
         }
-            newStuff = Stuff(name: nameTextField.text!,
-                         price: priceTextField.text,
-                         serialNumber: serialNumberTextField.text,
-                         location: locationTextField.text,
-                         image: locationTextField.text,
-                         userId: self.user.uid)
-        let stuffRef = self.ref.child(newStuff!.name.lowercased())
-        stuffRef.setValue(newStuff?.convertToDictionary())
+            
         
-        stuffs.append(newStuff!)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+        NetworkManagerFB.shared.upload(currentStuffName: nameTextField.text!, photo: image!) { result in
+            switch result {
+            case .success(let url):
+                self.newStuff = Stuff(name: self.nameTextField.text!,
+                                      price: self.priceTextField.text,
+                                      serialNumber: self.serialNumberTextField.text,
+                                      location: self.locationTextField.text,
+                                      image: url.absoluteString,
+                                      userId: self.user.uid)
+                let stuffRef = self.ref.child(self.newStuff!.name.lowercased())
+                stuffRef.setValue(self.newStuff?.convertToDictionary())
+                stuffs.append(self.newStuff!)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+            case .failure(_):
+                self.newStuff = Stuff(name: self.nameTextField.text!,
+                                      price: self.priceTextField.text,
+                                      serialNumber: self.serialNumberTextField.text,
+                                      location: self.locationTextField.text,
+                                      image: self.nameTextField.text!,
+                                      userId: self.user.uid)
+                stuffs.append(self.newStuff!)
+                AllMyStuffVC.imageStuffs["\(self.nameTextField.text!)"] = image
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+            }
+        }
+        
         dismiss(animated: true)
-        print(newStuff!)
     }
     
 //MARK: Work with NavigationBar

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2FDA72267B79B900C44D05 /* NetworkFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2FDA71267B79B900C44D05 /* NetworkFB.swift */; };
 		1F420D3D25FE905E0072EC7F /* StuffListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F420D3C25FE905E0072EC7F /* StuffListVC.swift */; };
 		1F420D4025FE90FB0072EC7F /* AllMyStuffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F420D3F25FE90FB0072EC7F /* AllMyStuffVC.swift */; };
 		1F420D4325FE91EB0072EC7F /* SectionMyStuffVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F420D4225FE91EB0072EC7F /* SectionMyStuffVC.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F2FDA71267B79B900C44D05 /* NetworkFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFB.swift; sourceTree = "<group>"; };
 		1F420D3C25FE905E0072EC7F /* StuffListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffListVC.swift; sourceTree = "<group>"; };
 		1F420D3F25FE90FB0072EC7F /* AllMyStuffVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMyStuffVC.swift; sourceTree = "<group>"; };
 		1F420D4225FE91EB0072EC7F /* SectionMyStuffVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionMyStuffVC.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				1FC884B92613661900414612 /* CategoryStuffCustomCell.swift */,
 				1FB6D62825FF6C2200229A42 /* AddNewStuffVC.swift */,
 				1FB6D66126023BE200229A42 /* StuffTableViewCell.swift */,
+				1F2FDA71267B79B900C44D05 /* NetworkFB.swift */,
 			);
 			path = ViewConrollers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F2FDA72267B79B900C44D05 /* NetworkFB.swift in Sources */,
 				1F93039A25FE8CF100428410 /* AutorizationVC.swift in Sources */,
 				1F420D4025FE90FB0072EC7F /* AllMyStuffVC.swift in Sources */,
 				1FB6D66226023BE200229A42 /* StuffTableViewCell.swift in Sources */,
